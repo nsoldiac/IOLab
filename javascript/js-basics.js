@@ -3,23 +3,46 @@
 
 // Pop-up the site's title
 function displaySiteTitle() {
-
+	var siteTitle = document.getElementById('site-title');
+	// alert("This site's title is: " + siteTitle.innerHTML);
+	console.log(siteTitle.innerHTML);
 }
 
 // Change around a few cat names
 function changeEvenNames() {
+	var newNames = ['George', 'Roberta', 'Phoenix'];
+	var cats = document.getElementsByClassName('ib-grid-item');
 
+	for (var i=0; i < cats.length; i++) {
+		if (i % 2 === 0) {
+			pName = cats[i].getElementsByTagName('p')[0];
+			pName.innerHTML = newNames[i];
+		}
+	}
 }
 
 // Add an event listener to a button
 window.onload = function() {
-
+	var eventListenerButton	= document.getElementById('event-listener-button');
+	// var eventListenerButton	= $('#event-listener-button');
+	// console.log(eventListenerButton);
+	eventListenerButton.addEventListener("click", function() {
+		console.log('The event listener works!');
+	});
 }
 
 // Switch page background between white and grey
 var colorSwitch = false;
 function switchBodyBackgroundColor() {
+	body = document.getElementsByTagName('body')[0];
 
+	if (colorSwitch) {
+		colorSwitch = false;
+		body.style.backgroundColor = "#ffffff";
+	} else {
+		colorSwitch = true;
+		body.setAttribute("style", "background-color: #a7a7a7");
+	}
 }
 
 // Remove the first cat in the grid
