@@ -1,0 +1,28 @@
+#top-bar {
+	background-color: #533a71;
+}
+
+.top-bar-style {
+	color: white;
+}
+
+body {
+	color: white;
+}
+
+#hnmain {
+	background-color: #50c5b7;
+}
+
+.tile {
+	display: inline-block;
+	min-width: 50px;
+	min-height: 50px;
+	width: 160px;
+	height: 160px;
+	/*border: 1px dotted white;*/
+	margin: 5px;
+	padding: 5px;
+	background-color: #6184db;
+	float: left;
+}
