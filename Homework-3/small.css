@@ -1,0 +1,25 @@
+body {
+	margin: 20px 0;
+	font-size: 18px;
+}
+
+header a {
+	padding: 10px;
+}
+Q
+nav {
+	margin: 20px;
+}
+
+nav a {
+	margin: 5px;
+}
+
+.main-container, .project-image, .project-detail {
+	width: 100%;
+	margin: inherit 0;
+}
+
+.project {
+	margin-bottom: 2em;
+}
