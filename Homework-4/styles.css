@@ -1,0 +1,25 @@
+body {
+	padding: 0 0 0 10px;
+}
+
+.container {
+	margin-top: 30px;
+}
+
+form {
+	margin-bottom: 40px;
+}
+
+#exampleInput {
+	/*width: 200px;*/
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    /*border: 1px solid #ddd;*/
+}
+
+#doneContainer {
+	margin-top: 60px;
+}
