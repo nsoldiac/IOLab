@@ -23,3 +23,7 @@ ul {
 #doneContainer {
 	margin-top: 60px;
 }
+
+#doneList > li > div > label {
+	text-decoration: line-through;
+}
