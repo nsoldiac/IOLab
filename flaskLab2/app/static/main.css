@@ -46,20 +46,25 @@ table {
 
 /*----------------- CSS RESET ------------------*/
 
+
+
 div#form {
-	width: 100%;
+	width: 80%;
 	padding: 20px 0 0 30px;
-
-}
-
-form {
-	margin-left-left: 40px;
-	display: inline;
 }
 
 form div.row {
 	width: 100%;
-	padding: 0 0 20px 0;
+	padding: 5px 0 10px 0;
+	vertical-align: middle;
+}
+
+form div.row div {
+	padding-bottom: 5px;
+}
+
+span.result {
+	font-weight: bold;
 }
 
 html, body {
@@ -109,12 +114,19 @@ a {
 	text-decoration: none;
 }
 
+input[type="text"] {
+	padding: 5px;
+	width: 100%;
+}
+
 input[type="text"], input[type="range"] {
 	border: 1px solid #bdc3c7;
 	border-radius: 2px;
-	margin-left: 1rem;
-	vertical-align: middle;
 	font-size: 16px;
+}
+
+input[type="submit"] {
+	margin-top: 10px;
 }
 
 input[type=range]{
