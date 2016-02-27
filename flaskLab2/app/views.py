@@ -17,7 +17,10 @@ def index():
 @myapp.route('/login', methods=['GET', 'POST'])
 def login():
 	if request.method=='POST':
-		pass
+		session['username'] = request.form['name']
+		session['email'] = request.form['email']
+		return(redirect(url_for('index')))
+	return("<h1>Derp</h1>")
 
 @myapp.route('/logout')
 def logout():
