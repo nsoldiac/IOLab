@@ -5,6 +5,23 @@ $('#submit-survey').on('click', function submitSurvey() {
 	var feBefore = $("input[name=front-end-before]").val();
 	var feAfter = $("input[name=front-end-after]").val();
 
+	var data = {
+		color: color,
+		food: food,
+		vacation: vacation,
+		feBefore: feBefore,
+		feAfter: feAfter
+	};
+
+	console.log("Color: " + data['color']);
+	console.log("Food: " + data['food']);
+	console.log("Vacation: " + data['vacation']);
+	console.log("Proficiency Before: " + data['feBefore']);
+	console.log("Front End Module: " + data['feAfter']);
+
+	$.post('submit-survey', data, function(derp) {
+		document.body.parentNode.innerHTML = derp;
+	});
 });
 
 $("#results-email-container").on('click', '#email-results-button', function emailResults() {
