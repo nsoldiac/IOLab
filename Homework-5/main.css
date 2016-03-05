@@ -14,7 +14,7 @@ div.master {
 
 nav {
 	position: fixed;
-	z-index: 998;
+	z-index: 9999;
 	background-color: white;
 	margin: 0 0 40px 0;
 	padding: 0;
@@ -67,8 +67,8 @@ div.main-container {
 	padding-bottom: 50px;
 	height: 100%;
 	width: 95%;
-	padding: 20px 0 0 10px;
-	margin: 50px 0 0 0;
+	padding: 70px 0 0 10px;
+	margin: 0 0 0 0;
 	overflow: auto;
 }
 
@@ -160,9 +160,9 @@ div.playlist {
 	border-right: 1px solid lightgray;
 	position: relative;
 	height: 100%;
-	width: 95%;
-	padding: 30px 0 0 30px;
-	margin: 50px 0 0 0;
+	/*width: 95%;*/
+	padding: 70px 0 0 30px;
+	margin: 0 0 0 0;
 	overflow: auto;
 }
 
@@ -183,6 +183,8 @@ div.playlist-image {
 
 div.playlist-image > img {
 	width: 100%;
+	z-index: 9999;
+	position: relative;
 }
 
 div.control-container {
@@ -216,6 +218,7 @@ div.controls > ul > li {
 div.playlist-item > div.play {
 	position: relative;
 	cursor: pointer;
+	z-index: 999;
 	top: 40px;
 	left: 80px;
 	background-color: transparent;
@@ -227,4 +230,44 @@ div.playlist-item > div.play {
 	opacity: 1;
 }
 
+/* credit: http://codepen.io/elalemanyo/pen/wueft */
+#bars {
+    height: 30px;
+    /*display: none;*/
+    left: 220px;
+    margin: -30px 0 0 -20px;
+    position: absolute;
+    top: -23px;
+    width: 40px;
+}
 
+.bar {
+	background: gray;
+    bottom: -20px;
+    height: 3px;
+    position: absolute;
+    width: 3px;      
+    animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+    0% {
+       opacity: .35;
+        height: 3px; 
+    }
+    100% {
+        opacity: 1;       
+        height: 28px;        
+    }
+}
+
+.bar:nth-child(1)  { left: 1px; animation-duration: 474ms; }
+.bar:nth-child(2)  { left: 5px; animation-duration: 433ms; }
+.bar:nth-child(3)  { left: 9px; animation-duration: 407ms; }
+.bar:nth-child(4)  { left: 13px; animation-duration: 458ms; }
+.bar:nth-child(5)  { left: 17px; animation-duration: 400ms; }
+.bar:nth-child(6)  { left: 21px; animation-duration: 427ms; }
+.bar:nth-child(7)  { left: 25px; animation-duration: 441ms; }
+.bar:nth-child(8)  { left: 29px; animation-duration: 419ms; }
+.bar:nth-child(9)  { left: 33px; animation-duration: 487ms; }
+.bar:nth-child(10) { left: 37px; animation-duration: 442ms; }​
