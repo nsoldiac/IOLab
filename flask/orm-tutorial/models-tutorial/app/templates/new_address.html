@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    {% if name %}
+      <h2>Add Address for {{ name }}</h2>
+    {% else %}
+      <h2>Add Address for Customer</h2>
+    {% endif %}
+    <div class= "section">
+      <a class="menu-links" href="{{ url_for('display_customer') }}">Home</a>
+    </div>
+    <form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+      <div class="divider"></div>
+      <div class="section">
+        <h3>Address information</h3>
+        <p>
+          Street Address:<br>
+          {{ form.street_address(size=200) }}<br>
+        </p>
+        <p>
+          City:<br>
+          {{ form.city(size=100) }}<br>
+        </p>
+        <div >
+          State:<br>
+          {{ form.state(size=100) }}<br>
+        </div>
+        <div >
+          Country:<br>
+          {{ form.country(size=100) }}<br>
+        </div>
+        <div >
+          Zip code:<br>
+          {{ form.zip_code(size=10) }}<br>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <input type="submit" value="Add Address" style="padding:10px;">
+    </form>
+  </div>
+</div>
+{% endblock %}

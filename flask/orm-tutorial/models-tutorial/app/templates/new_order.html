@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h2>New Order</h2>
+    <div class= "section">
+      <a class="menu-links" href="{{ url_for('display_customer') }}">Home</a>
+    </div>
+    <form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+      <div class="divider"></div>
+      <div class="section">
+        <!-- <h3>Address information</h3> -->
+        <p>
+          Number of Parts Ordered:<br>
+          {{ form.num_parts_ordered(size=100) }}<br>
+        </p>
+        <p>
+          Total Spent:<br>
+          {{ form.total_spent(size=20) }}<br>
+        </p>
+      </div>
+      <input type="submit" value="Create Order" style="padding:10px;">
+    </form>
+  </div>
+</div>
+{% endblock %}

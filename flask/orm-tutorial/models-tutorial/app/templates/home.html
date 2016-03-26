@@ -4,24 +4,31 @@
     <div class="row">
       <h1>Welcome to ACME Aircraft Parts</h1>
       <div class= "section">
-        <a href="{{ url_for('create_customer') }}">Add a Customer</a>
+        <a class='menu-links' href="{{ url_for('create_customer') }}">New Customer</a>
       </div>
       <div class="divider"></div>
       <div class="section">
+        <i style="color:gray;">Order information displayed within each customer's details section</i>
         <h3>These are all of our awesome customers:</h3>
         <table class="striped">
           <thead>
             <tr>
+              <th data-field="first_name">Name</th>
               <th data-field="company">Company</th>
               <th data-field="email">Email</th>
+              <th data-field="phone">Phone</th>
+              <th data-field="details"></th>
+              <th data-field="delete"></th>
             </tr>
           </thead>
           {% for customer in customers %}
-          <!-- {% for address in customer.addresses %}
-          {% endfor %} -->
             <tr>
+              <td>{{ customer.first_name }} {{ customer.last_name }}</td>
               <td>{{ customer.company }}</td>
               <td>{{ customer.email }}</td>
+              <td>{{ customer.phone }}</td>
+              <td><a href="{{ url_for('display_customer_details', customer_id=customer.id) }}">View details</a></td>
+              <td><a href="{{ url_for('delete_customer', customer_id=customer.id) }}"><i class="material-icons">delete</i></a></td>
             </tr>
           {% endfor %}
         </table>

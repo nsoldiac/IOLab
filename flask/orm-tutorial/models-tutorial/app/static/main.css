@@ -1,0 +1,18 @@
+h1, h2, h3 {
+	color: lightblue;
+}
+
+a {
+	color: gray;
+}
+
+a:hover {
+	color: silver;
+	text-decoration: underline;
+}
+
+a.menu-links {
+	margin-right: 20px;
+	font-size: 22px;
+	font-weight: lighter;
+}

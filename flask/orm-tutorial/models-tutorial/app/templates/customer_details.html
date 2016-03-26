@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <h1>Welcome to ACME Aircraft Parts</h1>
+      <div class= "section">
+        <a href="{{ url_for('display_customer') }}" class="menu-links">Home</a>
+        <a class="menu-links" href="{{ url_for('add_address', customer_id=customer.id) }}">Add Address</a>
+        <a class="menu-links" href="{{ url_for('new_order', customer_id=customer.id) }}">Create Order</a>
+        <a class="menu-links" href="{{ url_for('create_customer') }}">New Customer</a>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <h3>Customer details:</h3>
+        <p><b>Name:</b> {{ customer.first_name }} {{ customer.last_name }}</p>
+        <p><b>Company:</b> {{ customer.company }}</p>
+        <p><b>Email:</b> {{ customer.email }}</p>
+        <p><b>Phone:</b> {{ customer.phone }}</p>
+        </div>
+        <div class="section">
+
+        <h3>Customer Addresses:</h3>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th data-field="street_adress">Street address</th>
+              <th data-field="city">City</th>
+              <th data-field="state">State</th>
+              <th data-field="country">Country</th>
+              <th data-field="zip_code">Zip code</th>
+              <th data-field="delete"></th>
+            </tr>
+          </thead>
+            {% for address in customer.addresses %}
+            <tr>
+              <td>{{ address.street_address }} </td>
+              <td>{{ address.city }}</td>
+              <td>{{ address.state }}</td>
+              <td>{{ address.country }}</td>
+              <td>{{ address.zip_code }}</td>
+              <td><a href="{{ url_for('delete_address', address_id=address.id) }}"><i class="material-icons">delete</i></a></td>
+            {% endfor %}
+        </table>
+        
+        <h3>Customer Orders:</h3>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th data-field="total_spent">Total spent</th>
+              <th data-field="num_parts_ordered">No. parts ordered</th>
+              <th data-field="delete"></th>
+            </tr>
+          </thead>
+          {% for order in orders %}
+            <tr>
+              <td>{{ order.total_spent }} </td>
+              <td>{{ order.num_parts_ordered }}</td>
+              <td><a href="#"><i class="material-icons">delete</i></a></td>
+          {% endfor %}
+        </table>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

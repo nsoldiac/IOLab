@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h2>Add Customer to Our Database</h2>
+    <div class= "section">
+      <a class="menu-links" href="{{ url_for('display_customer') }}">Home</a>
+    </div>
+    <form class="col s12" action="" method="post" name="login">
+      {{ form.hidden_tag() }}
+      <div class="divider"></div>
+      <div class="section">
+        <h3>Customer information</h3>
+        <p>
+          First name:<br>
+          {{ form.first_name(size=120, class_="validate") }}<br>
+        </p>
+        <p>
+          Last name:<br>
+          {{ form.last_name(size=120) }}<br>
+        </p>
+        <p>
+          Company name:<br>
+          {{ form.company(size=120) }}<br>
+        </p>
+        <p>
+          Customer email:<br>
+          {{ form.email(size=120) }}<br>
+        </p>
+        <div style="width:40%;">
+          Customer phone:<br>
+          {{ form.phone(size=20) }}<br>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <input type="submit" value="Create Customer" style="padding:10px;">
+    </form>
+  </div>
+</div>
+{% endblock %}
